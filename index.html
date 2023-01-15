@@ -4,7 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>First Example</title>
   </head>
-  <body></body>
+  <body>
+    <div id="wrapper">
+      <h1>AJAX is going to change this text</h1>
+      <button onclick="loadMessage()">Change Content</button>
+    </div>
+    <script>
+      function loadMessage() {
+        // now we are going to set up our AJAX call
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "./message.txt", true); // pass true if want to be async
+        xhr.onload = function () {
+          document.getElementById("wrapper").innerHTML = this.responseText;
+        }; // ajax has to deal with the response sent back from the server
+        xhr.send();
+      }
+    </script>
+  </body>
 </html>
