@@ -22,7 +22,8 @@ console.log(newUser);
 console.log(newUser.email);
 
 function Member(name, age) {
-  "use strict";
+  // "use strict";
+  console.log(new.target);
   this.name = name;
   this.age = age;
 }
@@ -32,3 +33,6 @@ const userOne = new Member("Brennan", 31);
 // can fix binding to global window/namespace by using strict mode (will then throw error)
 
 console.log(userOne);
+
+// use strict not best solution
+// can force usage of the new key word instae with new.target
