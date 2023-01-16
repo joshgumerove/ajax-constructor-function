@@ -20,3 +20,15 @@ const newUser = new User("Josh", "somepassword");
 console.log(newUser);
 
 console.log(newUser.email);
+
+function Member(name, age) {
+  "use strict";
+  this.name = name;
+  this.age = age;
+}
+
+const userOne = new Member("Brennan", 31);
+// remember: constructor function --> constructs objects
+// can fix binding to global window/namespace by using strict mode (will then throw error)
+
+console.log(userOne);
